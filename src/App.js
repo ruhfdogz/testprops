@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css';
 import Card from './Components/Card';
 import ClassComponent from './Components/ClassComponent'
+import TodoList from './Components/TodoList';
 
 function App() {
 
@@ -19,6 +20,15 @@ function App() {
     maClass: 'ma-classe de test'
   }
 
+  const todos = [
+    { task: "Faire le ménage", completed: false},
+    { task: "Acheter pantalons Kway", completed: false},
+    { task: "Ranger abris de jardin", completed: false},
+    { task: "Tondre la pelouse", completed: true}
+  ]
+
+
+
   return (
     <>
     <div className="App">
@@ -27,6 +37,8 @@ function App() {
       </Card>
     </div>
     <ClassComponent nom="Benjamin"/>
+    <TodoList todos={todos}/>
+
     </>
   );
 }
