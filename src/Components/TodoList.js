@@ -8,7 +8,7 @@ function TodoList({ todos }) {
     const addTodo = () => {
         const completed = newTodoChecked
         if (newTodo.trim() !== "") {
-            setList([...list, { task: newTodo, completed: newTodoChecked }])
+            setList([...list, { task: newTodo.trim(), completed: newTodoChecked }])
             setNewTodo("")
             setNewTodoChecked(false)
         }
@@ -46,7 +46,7 @@ function TodoList({ todos }) {
                     (!e.completed || showCompleted) ? (                
                     <li key={index}>
                         <input type="checkbox" checked={e.completed} onChange={() => changeTodo(index)} />
-                        {e.task}
+                        {e.task}...
                         <Button label="Supprimer" onClick={() => deleteTodo(index)} />
                     </li>) 
                     : null
